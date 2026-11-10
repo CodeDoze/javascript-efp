@@ -51,6 +51,7 @@ console.log(counter);
 // console.log(5 === '5'); false
 // Vérifiez, et comparez avec vos prédictions
 // Pourquoi préfère-t-on === à == ?
+
 // le triple egale cest stritement le meme  il compare le type et la valeur 
 // le double  ne compare pas les types 
 
@@ -87,25 +88,42 @@ console.log(isValidUser, isInRange);
 
 
 
+
 // 6. Valeur par défaut: || ou ?? ?
 // Une quantité de 0 est une valeur valide. Si la quantité est absente (null ou undefined), on veut 1 par défaut.
 // Déclarez const quantity = 0;
 // Affichez quantity || 1, puis quantity ?? 1
 // Lequel des deux donne le bon résultat ? Pourquoi ?
-
+const quantity = 0 ;
+// console.log(quantity || 1)
+console.log(quantity ?? 1)
 
 
 // 7. Chaînage optionnel
 // Déclarez const user = { name: 'Alice' };
+
 // Affichez user.address.city: que se passe-t-il ?
+
 // Corrigez avec ?.: qu'affiche la console maintenant ?
+// SyntaxError: Unexpected token '?'
+
 // Combinez avec ?? pour afficher 'Ville inconnue' quand la ville est absente
 
+const user = {name :"Alice"};
 
+console.log(user?.address?.city)
+console.log(user??address??city)
 
-// 8. Bonus: spread
+// 8. Bonus: spread (Decomposé)
 // Pour aller plus loin.
 // Déclarez const fruits = ['apple', 'banana'];
 // Créez moreFruits, une copie de fruits avec 'cherry' en plus, sans modifier fruits
 // Déclarez const profile = { name: 'Alice' }; et const settings = { theme: 'dark' };
 // Créez account, qui fusionne les deux objets
+const fruits = ['apple', 'banana']; 
+const moreFruits= [ fruits ,"cherry" ];
+console.log(moreFruits)
+const profile = { name: 'Alice' };
+const settings = { theme: 'dark' };
+const account = {profile,settings};
+console.log(account)
