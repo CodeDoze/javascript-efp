@@ -63,7 +63,7 @@ console.log(counter);
 // Affichez la même phrase avec un template literal
 const firstName = "Alice";
 let age = 30;
-console.log(`Bonjour ${firstName},vous avez ${age} 30 ans. `)
+console.log(`Bonjour ${firstName},vous avez ${age} ans. `)
 console.log("Bonjour " + firstName +",vous avez " + age + " ans.")
 
 
@@ -93,6 +93,11 @@ console.log(isValidUser, isInRange);
 // Affichez quantity || 1, puis quantity ?? 1
 // Lequel des deux donne le bon résultat ? Pourquoi ?
 
+const quantity = 0; 
+console.log (quantity ||1, quantity ?? 1)
+//quantity || 1 renvoie 1 , le quantity ?? 1 renvoie 0
+// 0 est une valeur fausse donc avec ||1 la valeur change , avec  ?? 1  il a garde la valeur 
+
 
 
 // 7. Chaînage optionnel
@@ -100,7 +105,10 @@ console.log(isValidUser, isInRange);
 // Affichez user.address.city: que se passe-t-il ?
 // Corrigez avec ?.: qu'affiche la console maintenant ?
 // Combinez avec ?? pour afficher 'Ville inconnue' quand la ville est absente
-
+const user = { name: 'Alice' };
+console.log(user.addres?.city??"Ville inconnue")
+//undeflined ?.
+//?? affiche  Ville inconnue 
 
 
 // 8. Bonus: spread
@@ -109,3 +117,13 @@ console.log(isValidUser, isInRange);
 // Créez moreFruits, une copie de fruits avec 'cherry' en plus, sans modifier fruits
 // Déclarez const profile = { name: 'Alice' }; et const settings = { theme: 'dark' };
 // Créez account, qui fusionne les deux objets
+
+const fruits = ['apple', 'banana'];
+// les 3 petit points cest un  operateur spread 
+const morefruits = [...fruits,'cherry'];
+console.log(fruits)
+const profile = { name:"Alice"};
+const settings = { theme: 'dark' };
+// les 3 petit points cest un  operateur spread 
+const account = {...profile,...settings}
+console.log(account)
